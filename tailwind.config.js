@@ -2,7 +2,16 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#b9ff66',
+        secondary: '#191a23',
+        tertiary: '#f3f3f3',
+      },
+      fontFamily: {
+        primary: ['Space Grotesk', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
