@@ -4,6 +4,7 @@ import CTA from './components/CTA'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import Services from './components/Services'
+import WorkingProcess from './components/WorkingProcess'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Services />
       <CTA />
       <CaseStudies />
+      <WorkingProcess />
     </div>
   )
 }

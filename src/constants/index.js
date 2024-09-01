@@ -96,3 +96,63 @@ export const SERVICES = [
     textColor: 'text-gray-900',
   },
 ]
+
+export const CASESTUDIES = [
+  {
+    title: 'Case Study 1',
+    description:
+      'For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.',
+    link: '#',
+  },
+  {
+    title: 'Case Study 2',
+    description:
+      'For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.',
+    link: '#',
+  },
+  {
+    title: 'Case Study 3',
+    description:
+      'For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.',
+    link: '#',
+  },
+]
+
+export const PROCESS_STEPS = [
+  {
+    number: '01',
+    question: 'Consultation',
+    answer:
+      'During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.',
+  },
+  {
+    number: '02',
+    question: 'Research and Strategy Development',
+    answer:
+      'We conduct thorough research to develop a customized marketing strategy that aligns with your goals and objectives.',
+  },
+  {
+    number: '03',
+    question: 'Implementation',
+    answer:
+      'Our team will execute the strategy with precision, ensuring all aspects are carried out effectively.',
+  },
+  {
+    number: '04',
+    question: 'Monitoring and Optimization',
+    answer:
+      'We continuously monitor the performance of the implemented strategy and make adjustments as needed to maximize results.',
+  },
+  {
+    number: '05',
+    question: 'Reporting and Communication',
+    answer:
+      'Regular reports and open communication keep you informed about the progress and success of the marketing efforts.',
+  },
+  {
+    number: '06',
+    question: 'Continual Improvement',
+    answer:
+      'We are committed to ongoing optimization and improvement to ensure your marketing strategy evolves with your business.',
+  },
+]
