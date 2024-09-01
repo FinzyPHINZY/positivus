@@ -1,4 +1,5 @@
 import bannerImg from '../assets/bannerImg.svg'
+import BrandsCarousel from './BrandsCarousel'
 
 const Hero = () => {
   return (
@@ -24,6 +25,9 @@ const Hero = () => {
             <img src={bannerImg} alt="" className="w-full h-auto rounded-md" />
           </div>
         </div>
+
+        {/* carousel */}
+        <BrandsCarousel />
       </div>
     </section>
   )

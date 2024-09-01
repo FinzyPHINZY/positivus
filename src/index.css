@@ -3,3 +3,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: 15s marquee infinite linear;
+  width: max-content;
+}
+
+.hover\:pause-marquee:hover {
+  animation-play-state: paused;
+}
