@@ -1,5 +1,7 @@
 import { MdOutlineArrowOutward } from 'react-icons/md'
 import { CASESTUDIES } from '../constants'
+import { motion } from 'framer-motion'
+import variants from '../utils'
 
 const CaseStudies = () => {
   return (
@@ -21,7 +23,11 @@ const CaseStudies = () => {
         <div className="bg-black text-white p-8 rounded-md">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {CASESTUDIES.map((study, index) => (
-              <div
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: 0.1 }}
+                variants={variants('right', 0.3)}
                 className="p-4 border border-gray-700 rounded-md"
                 key={index}
               >
@@ -33,7 +39,7 @@ const CaseStudies = () => {
                 >
                   Learn More <MdOutlineArrowOutward className="ml-2" />
                 </a>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

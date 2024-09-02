@@ -1,9 +1,17 @@
 import CTAImage from '../assets/ctaimg.svg'
+import { motion } from 'framer-motion'
+import variants from '../utils'
 
 const CTA = () => {
   return (
     <section className="relative py-12" id="use-cases">
-      <div className="max-w-7xl mx-auto bg-[#f3f3f3] rounded-md sm:pt-24 pt-8 pb-12 flex flex-col  md:flex-row items-center justify-between px-4 sm:px-6 lg:px-8">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.1 }}
+        variants={variants('top', 0.3)}
+        className="max-w-7xl mx-auto bg-[#f3f3f3] rounded-md sm:pt-24 pt-8 pb-12 flex flex-col  md:flex-row items-center justify-between px-4 sm:px-6 lg:px-8"
+      >
         <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
           {' '}
           <h1 className="text-3xl font-bold text-secondary mb-4">
@@ -25,7 +33,7 @@ const CTA = () => {
             style={{ transform: `scale(1.05)` }}
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

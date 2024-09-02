@@ -1,5 +1,7 @@
 import bannerImg from '../assets/bannerImg.svg'
 import BrandsCarousel from './BrandsCarousel'
+import { motion } from 'framer-motion'
+import variants from '../utils'
 
 const Hero = () => {
   return (
@@ -8,21 +10,47 @@ const Hero = () => {
         <div className="flex flex-col-reverse md:flex-row items-center gap-6 *:md:w-1/2">
           <div className="">
             <div className="md:w-2/3">
-              <h1 className="text-4xl font-bold text-secondary mb-4">
+              <motion.h1
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: 0.1 }}
+                variants={variants('bottom', 0.2)}
+                className="text-4xl font-bold text-secondary mb-4"
+              >
                 Navigating the digital landscape for success
-              </h1>
-              <p className="text-gray-600 mb-6 text-justify md:text-start">
+              </motion.h1>
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: 0.1 }}
+                variants={variants('bottom', 0.5)}
+                className="text-gray-600 mb-6 text-justify md:text-start"
+              >
                 Our digital marketing agency helps businesses grow and succeed
                 online through a range of services including SEO, PPC, social
                 media marketing, and content creation.
-              </p>
-              <button className="inline-block px-6  py-3 bg-black text-white font-semibold rounded-md hover:bg-primary hover:text-black transition-all duration-300">
+              </motion.p>
+              <motion.button
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: 0.1 }}
+                variants={variants('bottom', 0.7)}
+                className="inline-block px-6  py-3 bg-black text-white font-semibold rounded-md hover:bg-primary hover:text-black transition-all duration-300"
+              >
                 Book a consultation
-              </button>
+              </motion.button>
             </div>
           </div>
           <div className="">
-            <img src={bannerImg} alt="" className="w-full h-auto rounded-md" />
+            <motion.img
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.1 }}
+              variants={variants('bottom', 0.5)}
+              src={bannerImg}
+              alt=""
+              className="w-full h-auto rounded-md"
+            />
           </div>
         </div>
 
