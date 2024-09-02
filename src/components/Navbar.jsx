@@ -1,6 +1,6 @@
 import { HiOutlineMenuAlt3, HiOutlineX } from 'react-icons/hi'
 import { NAV_MENU_ITEMS } from '../constants'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,8 +14,44 @@ const Navbar = () => {
     setIsOpen((prev) => !prev)
     setActiveItem(name)
   }
+
+  useEffect(() => {
+    const sections = NAV_MENU_ITEMS.map((item) =>
+      document.querySelector(item.href)
+    )
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2
+      let currentSection = ''
+
+      sections.forEach((section) => {
+        if (
+          section &&
+          section.offsetTop < scrollPosition &&
+          section.offsetTop + section.offsetHeight > scrollPosition
+        ) {
+          currentSection = section.getAttribute('id')
+          console.log(currentSection)
+        }
+      })
+
+      const activeMenuItem = NAV_MENU_ITEMS.find(
+        (item) => item.href === `#${currentSection}`
+      )
+
+      setActiveItem(activeMenuItem?.name || '')
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Initialize on mount
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, []) // Empty dependency array, as this effect does not directly rely on component state or props
+
   return (
-    <nav className="">
+    <nav className="top-0 right-0 left-0 bg-white fixed shadow-md z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="">
